@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title> Задачник по информатике за 7 класс </title>
+        <link rel="stylesheet" href="./css/mainPage.css">
+        <style>
+            body {
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="login-box">
+            <h2>Перед началом тестирования, заполните ячейки ниже.</h2>
+            <form>
+              <div class="user-box" id="firstname">
+                <input type="text" name="" required="">
+                <label>Имя</label>
+              </div>
+              <div class="user-box" id="secondname">
+                <input type="text" name="" required="">
+                <label>Фамилия</label>
+              </div>
+              <a onclick="checkFirstNameAndSecondName()" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Выбрать вариант
+              </a>
+            </form>
+          </div>
+          <script>
+            window.localStorage.setItem('firstname', "");
+            window.localStorage.setItem('secondname', "");
+            window.localStorage.setItem('variat', 0);
+            window.localStorage.setItem('correct', 0);
+            window.localStorage.setItem('wrong', 0);
+            window.localStorage.setItem('notify', '')
+          </script>
+          <script src="./scripts/mainScript.js"></script>
+    </body>
+</html>

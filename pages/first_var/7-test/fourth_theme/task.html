@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title> Задачник по информатике за 7 класс </title>
+        <link rel="stylesheet" href="./task.css">
+        </style>
+    </head>
+    <body>
+
+        <div class="login-box">
+                <h1> Вопрос 4</h1>
+                <h3> Какую программу нужно выбрать для обработки числовой информации?</h3>
+            <form>
+                <a onclick="wrongOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Paint
+                  </a>
+                  <a onclick="wrongOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    StarOffice Impress
+                  </a>
+                  <a onclick="wrongOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    MS Word
+                  </a>
+                  <a onclick="succesOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    MS Excel
+                  </a>
+            </form>
+          </div>
+        <script src="../../../../scripts/notify.js"></script>
+        <script>  
+        var notyf = new Notyf();
+        if(window.localStorage.getItem('notify') == 'success') notyf.success('Правильно!');
+        if(window.localStorage.getItem('notify') == 'wrong') notyf.error('Неправильно :-(');
+        function succesOtvet(){
+          window.localStorage.setItem('notify', 'success')
+        window.localStorage.setItem('correct', +window.localStorage.getItem('correct') + 1);
+        window.location.href = "../fifth_theme/task.html"
+            }
+
+        function wrongOtvet(){
+          window.localStorage.setItem('notify', 'wrong')
+        window.localStorage.setItem('wrong', +window.localStorage.getItem('wrong') + 1);
+        window.location.href = "../fifth_theme/task.html"
+            }
+        </script>
+    </body>
+</html>

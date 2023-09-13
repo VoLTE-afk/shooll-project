@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title> Задачник по информатике за 7 класс </title>
+        <link rel="stylesheet" href="./task.css">
+        <style>
+            body {
+            text-align: center;
+        }
+        </style >
+    </head>
+    <body>
+
+        <div class="login-box">
+                <h1 id="pozdrv"> Поздравляю!</h1>
+                <h3 id="correct">1233</h3>
+                <h3 id="uncorrect">1512</h3>
+            <form>
+                <a onclick="closed()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Завершить работу
+                  </a>
+            </form>
+          </div>
+        <script src="../../../../scripts/notify.js"></script>
+        <script> 
+        function closed(){
+        window.location.reload()
+        window.location.href = '../../../../index.html'
+        }
+        document.getElementById("pozdrv").innerHTML = `${window.localStorage.getItem('firstname')} ${window.localStorage.getItem('secondname')}, поздравляю!<p>Ты успешно завершил тест по теме "Компьютерные вирусы и антивирусные программы"!`;
+        document.getElementById("uncorrect").innerHTML = `Было совершено ${window.localStorage.getItem('wrong')} ошибок.`;
+        document.getElementById("correct").innerHTML = `Было получено ${window.localStorage.getItem('correct')} баллов.`;
+        var notyf = new Notyf();
+        if(window.localStorage.getItem('notify') == 'success') notyf.success('Правильно!');
+        if(window.localStorage.getItem('notify') == 'wrong') notyf.error('Неправильно :-(');
+        </script>
+    </body>
+</html>

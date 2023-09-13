@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title> Задачник по информатике за 7 класс </title>
+        <link rel="stylesheet" href="./task.css">
+        </style>
+    </head>
+    <body>
+
+        <div class="login-box">
+                <h1> Вопрос 5</h1>
+                <h4> В некотором каталоге хранится файл "<i>Список_литературы.txt</i>"</h4>>
+                <h4> В этом каталоге создали подкаталог с именем "<i>10_CLASS</i>" и переместили в него этот файл.</h4>
+                <h4> После этого полное имя файла стало "<i>D:\SCHOOL\PHYSICS\10_CLASS\Список_литературы.txt</i>"</h4>
+                <h4> Укажи полное имя катаога, в котором хранился файл до перемещения. </h4>
+            <form>
+                <a onclick="wrongOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    D:\SCHOOL\PHYSICS\10_CLASS
+                  </a>
+                  <a onclick="succesOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    D:\SCHOOL\PHYSICS
+                  </a>
+                  <a onclick="wrongOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    D:\SCHOOL
+                  </a>
+                  <a onclick="wrongOtvet()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    SCHOOL
+                  </a>
+            </form>
+          </div>
+        <script src="../../../../scripts/notify.js"></script>
+        <script>  
+        var notyf = new Notyf();
+        if(window.localStorage.getItem('notify') == 'success') notyf.success('Правильно!');
+        if(window.localStorage.getItem('notify') == 'wrong') notyf.error('Неправильно :-(');
+        function succesOtvet(){
+          window.localStorage.setItem('notify', 'success')
+        window.localStorage.setItem('correct', +window.localStorage.getItem('correct') + 1);
+        window.location.href = "../sixth_theme/task.html"
+            }
+
+        function wrongOtvet(){
+          window.localStorage.setItem('notify', 'wrong')
+        window.localStorage.setItem('wrong', +window.localStorage.getItem('wrong') + 1);
+        window.location.href = "../sixth_theme/task.html"
+            }
+        </script>
+    </body>
+</html>
